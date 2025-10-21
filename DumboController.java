@@ -31,6 +31,7 @@ public class DumboController
 		} while (robot.look(direction) == IRobot.WALL) ;
 
 		robot.face(direction); /* Face the robot in this direction */ 
+		System.out.println("I'm going ");
 	}
 
 }
