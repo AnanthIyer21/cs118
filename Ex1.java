@@ -4,9 +4,17 @@
 * Author: Stephen Jarvis
 */
 
+// Preamble
+// I ensured the robot does not hit a wall using a do while loop (ensuring that a random direction is chosen at least once) which continues running as long as a wall is detected in that direction
+// As soon as a wall is not detected the robot will be able to continue moving in that direction
+// I've designed the code in the order in which the output is presented (I'm going + robot direction + robot location)
+// First I identified the direction in which the robot will travels
+// Then I counted the number of walls around the robot, and hence judged what type of location the robot is in
+
+
 import uk.ac.warwick.dcs.maze.logic.IRobot;
 
-public class DumboController
+public class Ex1
 {
 
 	public void controlRobot(IRobot robot) {
@@ -37,7 +45,7 @@ public class DumboController
 			}
 		} while (robot.look(direction) == IRobot.WALL) ;
 
-		robot.face(direction); /* Face the robot in this direction */ 
+		robot.face(direction); /* Face the robot in this direction */
 
 		// state the direction in which the robot travels relative to itself
 		if (direction == IRobot.LEFT) {
@@ -77,31 +85,3 @@ public class DumboController
 		System.out.println("I'm going " + robot_direction + robot_location);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
