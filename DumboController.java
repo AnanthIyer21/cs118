@@ -25,8 +25,6 @@ public class DumboController
 		// make robot choose a random direction every 1/8 moves - use the same method as used for selecting the random number
 		randdir = (int) Math.floor(Math.random()*8);
 
-
-
 		// only do the following do while loop if wall ahead and setting 7/8 chance of getting ahead as the direction
 		if (robot.look(IRobot.AHEAD) != IRobot.WALL && randdir < 7) {
 			// set direction as ahead
