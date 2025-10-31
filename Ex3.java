@@ -4,9 +4,25 @@
  * Author:  Stephen Jarvis
  */
 
+/*
+Preamble
+
+Having re-read the guide again, I found functions (getHeading and setHeading) which would take inputs in terms of NORTH, SOUTH, EAST, WEST. This made me think about how I can implement them into the method alongside the robot.look function to get the status of what exists in that direction (wall, beenbefore, passage).
+
+The method ensures that the robot moves closer to the target because it goes through each direction (N,S,E,W) and checks if the target is in that direction and whether there is a wall there. If the target is in that direction and there is no wall, the robot moves that way. Otherwise a random direction with no wall is chosen. This ensures that as far as possible, the robot moves towards the target.
+
+The Homing robot cannot be expected to find the target always because the robot can get stuck at a point where there is a wall in both directions in which the robot wants to move. This forces the robot to move in a direction which moves the robot away from the target, freeing up the square where the robot just was. This means on the next move, the robot is going to move in a direction which moves it towards the target, ie the robot goes back to the square where there is a wall in both directions in which the robot wants to move. This leads to a never ending cycle where the robot gets stuck in 2/3 squares - 2 if it is a dead end and 3 if its a situation where the wall is only in both directions the robot wants to move.
+
+The robot can be improved by suggesting the robot to also not move to a position where it has already been before, to be able to escape this never ending cycle.Ex
+*/
+
+
+
+
+
 import uk.ac.warwick.dcs.maze.logic.IRobot;
 
-public class Broken
+public class Ex3
 {
 
      public void controlRobot(IRobot robot) {
